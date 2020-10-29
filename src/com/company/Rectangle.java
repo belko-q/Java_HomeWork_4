@@ -3,43 +3,43 @@ package com.company;
 public class Rectangle {
     double x;
     double y;
-    double z;
+    private static int createdRectangles = 0;
+    final static String RUSSIAN_CLASS_NAME = "Прямоугольник";
+    final static String ENGLISH_CLASS_NAME = "Rectangle";
 
-    Rectangle(double x, double y) {
+
+    public Rectangle(double x, double y) {
 
         this.x = x;
         this.y = y;
+        createdRectangles ++;
     }
 
-    Rectangle(double z) {
+    public Rectangle(double x) {
 
-        this.z = z;
-
+        this.x = x;
+        this.y = x;
+        createdRectangles ++;
     }
 
 
-    double calculateArea(Rectangle rectangle1) {
+    double calculateArea() {
         double p;
-        if(x!=0) {
-            p = x*y;
-        }
-        else {
-            p = z*z;
-        }
+        p = x*y;
 
 
         return p;
     }
 
-    void printArea(Rectangle rectangle1){
-        double pRect = calculateArea(rectangle1);
+    void printArea(){
+        double pRect = calculateArea();
         System.out.println("Площадь фигуры: " + pRect);
 
     }
 
-    String printRectangleKind(Rectangle rectangle1) {
+    String printRectangleKind() {
         String rectangleKind;
-        if(z!=0) {
+        if(x==y) {
             rectangleKind = "Это квадрат";
         }
         else{
@@ -58,7 +58,17 @@ public class Rectangle {
         return dublicate;
     }
 
+    void printRectanglesCount(){
+        System.out.println("Всего было создано " + createdRectangles + " прямоугольников.");
+    }
 
 
-
+    static void printClassName(boolean printInRussian) {
+        if (printInRussian == false){
+            System.out.println(ENGLISH_CLASS_NAME);
+        }
+          else{
+              System.out.println(RUSSIAN_CLASS_NAME);
+            }
+    }
 }

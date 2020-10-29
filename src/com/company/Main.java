@@ -6,19 +6,23 @@ public class Main {
         Rectangle rectangle1 = new Rectangle(3, 7);
         Rectangle rectangle2 = new Rectangle(3, 7);
         Rectangle rectangle3 = new Rectangle(3);
-        Rectangle rectangle4 = new Rectangle(4, 6);
 
 
-        rectangle2.calculateArea(rectangle2);
-        rectangle2.printArea(rectangle2);
+        rectangle2.calculateArea();
+        rectangle2.printArea();
 
-        rectangle3.calculateArea(rectangle3);
-        rectangle3.printArea(rectangle3);
+        rectangle3.calculateArea();
+        rectangle3.printArea();
 
-        rectangle2.printRectangleKind(rectangle2);
-        rectangle3.printRectangleKind(rectangle3);
+        rectangle2.printRectangleKind();
+        rectangle3.printRectangleKind();
 
         rectangle1.isTheSameRectangle(rectangle2);
-        rectangle1.isTheSameRectangle(rectangle4);
+
+        rectangle1.printRectanglesCount();
+
+        rectangle1.printClassName(false);
+        rectangle1.printClassName(true);
+
     }
 }
